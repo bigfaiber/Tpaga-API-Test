@@ -1,0 +1,251 @@
+<head>
+		<title>Store</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="../assets/main.css" />
+		<noscript><link rel="stylesheet" href="../assets/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Page Wrapper -->
+			<div id="page-wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="<%= root_path %>">Spectral</a></h1>
+						<nav id="nav">
+							<ul>
+								<li class="special">
+									<a href="#menu" class="menuToggle"><span>Menu</span></a>
+									<div id="menu">
+										<ul>
+											<li><a href="index.html">Home</a></li>
+											<li><a href="generic.html">Generic</a></li>
+											<li><a href="elements.html">Elements</a></li>
+											<li><a href="#">Sign Up</a></li>
+											<li><a href="#">Log In</a></li>
+										</ul>
+									</div>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Main -->
+					<article id="main">
+						<header>
+							<h2>Store</h2>
+							<p>Here you can purchase the best poker course</p>
+						</header>
+						<section class="wrapper style5">
+							<div class="inner">
+								<section>
+									<h4>Client Info</h4>
+									<%= form_for @purchase do |f|%>
+										<div class="row gtr-uniform">
+											<div class="col-6 col-12-xsmall">
+												<%= f.text_field :name, required: true, placeholder: 'Name'%>
+											</div>
+											<div class="col-6 col-12-xsmall">
+												<%= f.email_field :email, required: true, placeholder: 'Email' %>
+											</div>
+											<%# <div class="col-12">
+												<select name="product" id="category">
+													<option value="" disabled>- Product -</option>
+													<option value="1">Best poker course</option>
+													<option value="2" disabled>Poker Table</option>
+													<option value="3" disabled>Poker Chipset</option>
+												</select>
+											</div> %>
+                      <div class = "row">
+                        <div class="col-6 col-12-small">
+                          <%= f.label :quantity, 'Quantity'%>
+                          <%= f.number_field(:quantity, value: 1, step: 1, style: "color: black", id: 'qty')%>
+                        </div>
+                        <div class="col-6 col-12-small">
+                        <%= f.label :cost, 'Cost: '%>
+                          <span> <%= f.text_field(:cost, readonly: true, value: 100000, id: 'total')%></span>
+                        </div>
+                        </div>
+
+											<div class="col-12">
+												<ul class="actions">
+													<%# <li><input type="submit" value="Comprar!" class="primary" /></li> %>
+													<li><%= f.submit 'Comprar!', class: "primary"%></li>
+													<li><input type="reset" value="Reset" /></li>
+												</ul>
+											</div>
+										</div>
+									<%end%>
+
+               
+
+								</section>
+                   
+								<section>
+
+									<h5>Preformatted</h5>
+									<pre><code>i = 0;
+
+while (!deck.isInOrder()) {
+  print 'Iteration ' + i;
+  deck.shuffle();
+  i++;
+}
+
+print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
+								</section>
+
+							
+
+								<section>
+									<h4>Table</h4>
+									<h5>Default</h5>
+									<div class="table-wrapper">
+										<table>
+											<thead>
+												<tr>
+													<th>Name</th>
+													<th>Description</th>
+													<th>Price</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>Item One</td>
+													<td>Ante turpis integer aliquet porttitor.</td>
+													<td>29.99</td>
+												</tr>
+												<tr>
+													<td>Item Two</td>
+													<td>Vis ac commodo adipiscing arcu aliquet.</td>
+													<td>19.99</td>
+												</tr>
+												<tr>
+													<td>Item Three</td>
+													<td> Morbi faucibus arcu accumsan lorem.</td>
+													<td>29.99</td>
+												</tr>
+												<tr>
+													<td>Item Four</td>
+													<td>Vitae integer tempus condimentum.</td>
+													<td>19.99</td>
+												</tr>
+												<tr>
+													<td>Item Five</td>
+													<td>Ante turpis integer aliquet porttitor.</td>
+													<td>29.99</td>
+												</tr>
+											</tbody>
+											<tfoot>
+												<tr>
+													<td colspan="2"></td>
+													<td>100.00</td>
+												</tr>
+											</tfoot>
+										</table>
+									</div>
+
+									<h5>Alternate</h5>
+									<div class="table-wrapper">
+										<table class="alt">
+											<thead>
+												<tr>
+													<th>Name</th>
+													<th>Description</th>
+													<th>Price</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>Item One</td>
+													<td>Ante turpis integer aliquet porttitor.</td>
+													<td>29.99</td>
+												</tr>
+												<tr>
+													<td>Item Two</td>
+													<td>Vis ac commodo adipiscing arcu aliquet.</td>
+													<td>19.99</td>
+												</tr>
+												<tr>
+													<td>Item Three</td>
+													<td> Morbi faucibus arcu accumsan lorem.</td>
+													<td>29.99</td>
+												</tr>
+												<tr>
+													<td>Item Four</td>
+													<td>Vitae integer tempus condimentum.</td>
+													<td>19.99</td>
+												</tr>
+												<tr>
+													<td>Item Five</td>
+													<td>Ante turpis integer aliquet porttitor.</td>
+													<td>29.99</td>
+												</tr>
+											</tbody>
+											<tfoot>
+												<tr>
+													<td colspan="2"></td>
+													<td>100.00</td>
+												</tr>
+											</tfoot>
+										</table>
+									</div>
+								</section>
+
+							
+
+							
+
+								
+
+							</div>
+						</section>
+					</article>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<ul class="icons">
+							<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+							<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+							<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+							<li><a href="#" class="icon fa-dribbble"><span class="label">Dribbble</span></a></li>
+							<li><a href="#" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
+						</ul>
+						<ul class="copyright">
+							<li>&copy; Untitled</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+						</ul>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="../assets/jquery.min.js"></script>
+			<script src="../assets/jquery.scrollex.min.js"></script>
+			<script src="../assets/jquery.scrolly.min.js"></script>
+			<script src="../assets/browser.min.js"></script>
+			<script src="../assets/breakpoints.min.js"></script>
+			<script src="../assets/util.js"></script>
+			<script src="../assets/main.js"></script>
+
+      <script>
+        var qty = document.getElementById('qty');
+        var total = document.getElementById('total');
+
+        console.log(qty);
+        console.log(total);
+
+        
+
+        function calc() {
+          var price = 100000;
+          var qty2 = parseInt(qty.value, 10);
+
+          if (!isNaN(qty2)) { total.value = qty2 * price }
+
+        }
+
+        qty.addEventListener("change", calc);
+      </script>
+
+	</body>

@@ -3647,6 +3647,11 @@ input, select, textarea {
 			z-index: 1;
 		}
 
+	.costo {
+		margin: 0px;
+		
+		align-items: center;
+	}
 			#banner .more:after {
 				background-image: url("arrow.svg");
 				background-position: center;
