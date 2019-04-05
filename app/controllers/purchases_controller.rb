@@ -1,6 +1,6 @@
 class PurchasesController < ApplicationController
   # require 'json'
-  require 'HTTParty'
+
 
   def new
     @price = 100000
