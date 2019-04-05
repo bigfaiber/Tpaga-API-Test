@@ -4,9 +4,10 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.5.3'
 
 # Handles API requests easier
-gem 'rest-client'
+gem 'httparty'
 # Parse responses from string to JSON
 gem 'json'
+gem 'pry-rails'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.2'

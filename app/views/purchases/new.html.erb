@@ -19,9 +19,9 @@
 									<a href="#menu" class="menuToggle"><span>Menu</span></a>
 									<div id="menu">
 										<ul>
-											<li><a href="index.html">Home</a></li>
-											<li><a href="generic.html">Generic</a></li>
-											<li><a href="elements.html">Elements</a></li>
+											<li><a href="<%=root_path%>">Home</a></li>
+											<li><a href="<%=new_purchase_path%>">Store</a></li>
+											<li><a href="<%=purchases_path%>">Transactions</a></li>
 											<li><a href="#">Sign Up</a></li>
 											<li><a href="#">Log In</a></li>
 										</ul>
@@ -232,10 +232,7 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
         var qty = document.getElementById('qty');
         var total = document.getElementById('total');
 
-        console.log(qty);
-        console.log(total);
-
-        
+ 
 
         function calc() {
           var price = 100000;
