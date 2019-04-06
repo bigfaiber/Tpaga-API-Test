@@ -54,6 +54,9 @@
                   <li>Status: <%= @purchase.status%></li>
                   <li>Ip Address: <%= @purchase.ip_address%></li>
                 </ul>
+                <ul class="actions special">
+								<li><a href="<%=purchases_path%>" class="button primary">Transactions List</a></li>
+							</ul>
 								</section>
 
 							</div>
@@ -85,21 +88,6 @@
 			<script src="../assets/util.js"></script>
 			<script src="../assets/main.js"></script>
 
-      <script>
-        var qty = document.getElementById('qty');
-        var total = document.getElementById('total');
-
- 
-
-        function calc() {
-          var price = 100000;
-          var qty2 = parseInt(qty.value, 10);
-
-          if (!isNaN(qty2)) { total.value = qty2 * price }
-
-        }
-
-        qty.addEventListener("change", calc);
-      </script>
+  
 
 	</body>

@@ -5,13 +5,11 @@ class PurchasesController < ApplicationController
   def new
     @price = 100000
     @purchase = Purchase.new
-    response = GetRequest.new
-    
   end
 
   def create
     @purchase = Purchase.create(purchase_params)
-    @purchase.update(idempotency_token: Base64.encode64(@purchase.id.to_s), description: 'Purchase in poker academy', product: 'Best poker course', ip_address: request.remote_ip)
+    @purchase.update(idempotency_token: Base64.encode64((@purchase.id*100).to_s), description: 'Purchase in poker academy', product: 'Best poker course', ip_address: request.remote_ip)
     req = PostRequest.new(@purchase, purchase_path(@purchase.id)).post
     @purchase.update(token: req['token'])
     @purchase.update(status: req['status'])
@@ -22,8 +20,13 @@ class PurchasesController < ApplicationController
 
   def show
     @purchase = Purchase.find(params[:id])
+    response = GetRequest.new(@purchase).get
+    @purchase.update(status: response['status'])
   end
   
+  def index
+    @purchases = Purchase.all
+  end
   
   private
   def purchase_params

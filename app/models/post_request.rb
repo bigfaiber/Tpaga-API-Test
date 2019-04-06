@@ -14,7 +14,7 @@ class PostRequest
       url = 'https://stag.wallet.tpaga.co/merchants/api/v1/payment_requests/create'
   
       query = {"cost" => @purchase.cost.to_i,
-      "purchase_details_url" => "https://tpagatest.herokuapp.com#{@purchase.id}",
+      "purchase_details_url" => "https://tpagatest.herokuapp.com/purchases/#{@purchase.id}",
       "voucher_url" => "https://example.com/comprobante/",
       "idempotency_token" => @purchase.idempotency_token.to_s,
       "order_id" => @purchase.id.to_s,
