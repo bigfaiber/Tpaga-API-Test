@@ -3,6 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.5.3'
 
+gem "font-awesome-rails"
 # Handles API requests easier
 gem 'httparty'
 # Parse responses from string to JSON

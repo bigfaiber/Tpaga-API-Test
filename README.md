@@ -1,24 +1,14 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Tiempo presupuestado: 20 horas
 
-Things you may want to cover:
+Tiempo creando los modelos y migraciones: 3 horas
+Tiempo aprendiendo a consumir api externa con headers y encontrando una gema que funcionara con Tpaga: 12 horas
 
-* Ruby version
+Tiempo adaptando el template: 5 horas
+Tiempo tratando de hacer deploy con assets: 16 horas  #Not accomplished
+Tiempo montando las vistas de consulta: 2 horas
 
-* System dependencies
+Sitio web para probar: https://tpagatest4.herokuapp.com/
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Consejo: No sugerir el uso de templates con RoR, is a nightmare!!

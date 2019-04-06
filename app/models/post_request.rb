@@ -1,18 +1,20 @@
 class PostRequest
   attr_accessor :purchase
+  attr_accessor :purchaseUrl
   
-    def initialize(purchase)
+    def initialize(purchase, purchaseUrl)
       @purchase = purchase
+      @purchaseUrl = purchaseUrl
     end
   
     def post
-      p @purchase
+
       auth = 'Basic bWluaWFwcC1nYXRvMjptaW5pYXBwbWEtMTIz'
       url = 'https://stag.wallet.tpaga.co/merchants/api/v1/payment_requests/create'
   
       query = {"cost" => @purchase.cost.to_i,
-      "purchase_details_url" => "https://example.com/compra/348820",
-      "voucher_url" => "https://example.com/comprobante/#{@purchase.id}",
+      "purchase_details_url" => "https://tpagatest4.herokuapp.com#{@purchaseUrl}",
+      "voucher_url" => "https://example.com/comprobante/",
       "idempotency_token" => @purchase.idempotency_token.to_s,
       "order_id" => @purchase.id.to_s,
       "terminal_id" => "poker1",
@@ -29,6 +31,7 @@ class PostRequest
       }
   
       response = HTTParty.post(url, query: query, headers: {Authorization: auth, 'Cache-Control' => 'no-cache', 'Content-Type' => 'application/json'})
+
       response.parsed_response
     end
   end
