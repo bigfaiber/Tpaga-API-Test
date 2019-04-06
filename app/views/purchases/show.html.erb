@@ -1,0 +1,105 @@
+<head>
+		<title>Store</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="../assets/main.css" />
+		<noscript><link rel="stylesheet" href="../assets/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Page Wrapper -->
+			<div id="page-wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="<%= root_path %>">Spectral</a></h1>
+						<nav id="nav">
+							<ul>
+								<li class="special">
+									<a href="#menu" class="menuToggle"><span>Menu</span></a>
+									<div id="menu">
+										<ul>
+											<li><a href="<%=root_path%>">Home</a></li>
+											<li><a href="<%=new_purchase_path%>">Store</a></li>
+											<li><a href="<%=purchases_path%>">Transactions</a></li>
+											<li><a href="#">Sign Up</a></li>
+											<li><a href="#">Log In</a></li>
+										</ul>
+									</div>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Main -->
+					<article id="main">
+						<header>
+							<h2>Store</h2>
+							<p>Here you can purchase the best poker course</p>
+						</header>
+						<section class="wrapper style5">
+							<div class="inner">
+		
+
+                   
+								<section>
+
+								<h5>Purchase Info</h5>
+                <ul>
+                  <li>Id: <%= @purchase.id%></li>
+                  <li>Name: <%= @purchase.name%></li>
+                  <li>Email: <%= @purchase.email%></li>
+                  <li>Quantity: <%= @purchase.quantity%></li>
+                  <li>Cost: <%= @purchase.cost%></li>
+                  <li>Status: <%= @purchase.status%></li>
+                  <li>Ip Address: <%= @purchase.ip_address%></li>
+                </ul>
+								</section>
+
+							</div>
+						</section>
+					</article>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<ul class="icons">
+							<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+							<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+							<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+							<li><a href="#" class="icon fa-dribbble"><span class="label">Dribbble</span></a></li>
+							<li><a href="#" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
+						</ul>
+						<ul class="copyright">
+							<li>&copy; Untitled</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+						</ul>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="../assets/jquery.min.js"></script>
+			<script src="../assets/jquery.scrollex.min.js"></script>
+			<script src="../assets/jquery.scrolly.min.js"></script>
+			<script src="../assets/browser.min.js"></script>
+			<script src="../assets/breakpoints.min.js"></script>
+			<script src="../assets/util.js"></script>
+			<script src="../assets/main.js"></script>
+
+      <script>
+        var qty = document.getElementById('qty');
+        var total = document.getElementById('total');
+
+ 
+
+        function calc() {
+          var price = 100000;
+          var qty2 = parseInt(qty.value, 10);
+
+          if (!isNaN(qty2)) { total.value = qty2 * price }
+
+        }
+
+        qty.addEventListener("change", calc);
+      </script>
+
+	</body>
