@@ -13,4 +13,11 @@
 //= require rails-ujs
 //= require activestorage
 //= require turbolinks
+//= require jquery.min
+//= require jquery.scrolly.min
+//= require browser.min
+//= require main
+//= require breakpoints.min
+//= require jquery.scrollex.min
+//= require util
 //= require_tree .
