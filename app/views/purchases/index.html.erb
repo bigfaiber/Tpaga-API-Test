@@ -56,7 +56,7 @@
 												</tr>
 											</thead>
 											<tbody>
-												
+
                         <% @purchases.each do |p|%>
                         <tr>
 													<td><%= link_to(p.id, purchase_path(p.id))%></td>
@@ -66,20 +66,15 @@
 													<td><%= p.cost%></td>
                           </tr>
 												<% end %>
-												
+
 
 											</tbody>
-								
+
 										</table>
 									</div>
 
 								</section>
 
-							
-
-							
-
-								
 
 							</div>
 						</section>

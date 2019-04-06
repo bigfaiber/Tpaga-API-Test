@@ -49,14 +49,7 @@
 											<div class="col-6 col-12-xsmall">
 												<%= f.email_field :email, required: true, placeholder: 'Email' %>
 											</div>
-											<%# <div class="col-12">
-												<select name="product" id="category">
-													<option value="" disabled>- Product -</option>
-													<option value="1">Best poker course</option>
-													<option value="2" disabled>Poker Table</option>
-													<option value="3" disabled>Poker Chipset</option>
-												</select>
-											</div> %>
+							
                       <div class = "row">
                         <div class="col-6 col-12-small">
                           <%= f.label :quantity, 'Quantity'%>
@@ -70,26 +63,17 @@
 
 											<div class="col-12">
 												<ul class="actions">
-													<%# <li><input type="submit" value="Comprar!" class="primary" /></li> %>
+
 													<li><%= f.submit 'Comprar!', class: "primary"%></li>
 													<li><input type="reset" value="Reset" /></li>
 												</ul>
 											</div>
 										</div>
 									<%end%>
-
-               
-
-								</section>
-                   
-							
 								</section>
 
-							
+								</section>
 
-							
-
-								
 
 							</div>
 						</section>

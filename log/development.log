@@ -12379,3 +12379,92 @@ Processing by PurchasesController#index as HTML
 Completed 200 OK in 230ms (Views: 197.4ms | ActiveRecord: 0.3ms)
 
 
+Started GET "/" for ::1 at 2019-04-06 15:40:35 -0500
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 619ms (Views: 590.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/purchases/new" for ::1 at 2019-04-06 15:40:41 -0500
+Processing by PurchasesController#new as HTML
+  Rendering purchases/new.html.erb within layouts/application
+  Rendered purchases/new.html.erb within layouts/application (57.6ms)
+Completed 200 OK in 672ms (Views: 576.0ms | ActiveRecord: 6.1ms)
+
+
+Started POST "/purchases" for ::1 at 2019-04-06 15:40:48 -0500
+Processing by PurchasesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ANBQargPVkMu+Re6DkXETUQM+TKMIXkui3j3jwWsBQMwnNK0koRUSs9a1ZhKBQfqhzP5LUtYtU2CiQEsnQdyEA==", "purchase"=>{"name"=>"asdasd", "email"=>"greatfaiber@gmail.com", "quantity"=>"1", "cost"=>"100000"}, "commit"=>"Comprar!"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/purchases_controller.rb:11
+  [1m[36mPurchase Create (2.4ms)[0m  [1m[32mINSERT INTO "purchases" ("name", "email", "cost", "quantity", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "asdasd"], ["email", "greatfaiber@gmail.com"], ["cost", 100000.0], ["quantity", 1], ["created_at", "2019-04-06 20:40:48.494016"], ["updated_at", "2019-04-06 20:40:48.494016"]]
+  ↳ app/controllers/purchases_controller.rb:11
+  [1m[35m (7.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/purchases_controller.rb:11
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/purchases_controller.rb:12
+  [1m[36mPurchase Update (1.0ms)[0m  [1m[33mUPDATE "purchases" SET "description" = ?, "idempotency_token" = ?, "ip_address" = ?, "updated_at" = ?, "product" = ? WHERE "purchases"."id" = ?[0m  [["description", "Purchase in poker academy"], ["idempotency_token", "MTAwMA==\n"], ["ip_address", "::1"], ["updated_at", "2019-04-06 20:40:48.508332"], ["product", 0], ["id", 10]]
+  ↳ app/controllers/purchases_controller.rb:12
+  [1m[35m (8.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/purchases_controller.rb:12
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/purchases_controller.rb:14
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/purchases_controller.rb:14
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/purchases_controller.rb:15
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/purchases_controller.rb:15
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/purchases_controller.rb:16
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/purchases_controller.rb:16
+Redirected to 
+Completed 500 Internal Server Error in 1049ms (ActiveRecord: 19.7ms)
+
+
+  
+ActionController::ActionControllerError (Cannot redirect to nil!):
+  
+app/controllers/purchases_controller.rb:17:in `create'
+  [1m[36mPurchase Load (0.3ms)[0m  [1m[34mSELECT  "purchases".* FROM "purchases" ORDER BY "purchases"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+Started POST "/purchases" for ::1 at 2019-04-06 15:42:48 -0500
+Processing by PurchasesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ANBQargPVkMu+Re6DkXETUQM+TKMIXkui3j3jwWsBQMwnNK0koRUSs9a1ZhKBQfqhzP5LUtYtU2CiQEsnQdyEA==", "purchase"=>{"name"=>"asdasd", "email"=>"greatfaiber@gmail.com", "quantity"=>"1", "cost"=>"100000"}, "commit"=>"Comprar!"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/purchases_controller.rb:11
+  [1m[36mPurchase Create (2.5ms)[0m  [1m[32mINSERT INTO "purchases" ("name", "email", "cost", "quantity", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "asdasd"], ["email", "greatfaiber@gmail.com"], ["cost", 100000.0], ["quantity", 1], ["created_at", "2019-04-06 20:42:48.653044"], ["updated_at", "2019-04-06 20:42:48.653044"]]
+  ↳ app/controllers/purchases_controller.rb:11
+  [1m[35m (7.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/purchases_controller.rb:11
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/purchases_controller.rb:12
+  [1m[36mPurchase Update (1.2ms)[0m  [1m[33mUPDATE "purchases" SET "description" = ?, "idempotency_token" = ?, "ip_address" = ?, "updated_at" = ?, "product" = ? WHERE "purchases"."id" = ?[0m  [["description", "Purchase in poker academy"], ["idempotency_token", "MTEwMDA=\n"], ["ip_address", "::1"], ["updated_at", "2019-04-06 20:42:48.667143"], ["product", 0], ["id", 11]]
+  ↳ app/controllers/purchases_controller.rb:12
+  [1m[35m (5.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/purchases_controller.rb:12
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/purchases_controller.rb:14
+  [1m[36mPurchase Update (1.2ms)[0m  [1m[33mUPDATE "purchases" SET "token" = ?, "updated_at" = ? WHERE "purchases"."id" = ?[0m  [["token", "pr-9cfda65d0cc2680aa168b3972ef30f874995bfbb2bc190a1124c062b9837e981922976d8"], ["updated_at", "2019-04-06 20:42:49.627691"], ["id", 11]]
+  ↳ app/controllers/purchases_controller.rb:14
+  [1m[35m (4.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/purchases_controller.rb:14
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/purchases_controller.rb:15
+  [1m[36mPurchase Update (1.1ms)[0m  [1m[33mUPDATE "purchases" SET "status" = ?, "updated_at" = ? WHERE "purchases"."id" = ?[0m  [["status", "created"], ["updated_at", "2019-04-06 20:42:49.637687"], ["id", 11]]
+  ↳ app/controllers/purchases_controller.rb:15
+  [1m[35m (4.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/purchases_controller.rb:15
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/purchases_controller.rb:16
+  [1m[36mPurchase Update (1.1ms)[0m  [1m[33mUPDATE "purchases" SET "payment_url" = ?, "updated_at" = ? WHERE "purchases"."id" = ?[0m  [["payment_url", "https://w.tpaga.co/eyJtIjp7Im8iOiJQUiJ9LCJkIjp7InMiOiJtZWRpY2FwcCIsInBydCI6InByLTljZmRhNjVkMGNjMjY4MGFhMTY4YjM5NzJlZjMwZjg3NDk5NWJmYmIyYmMxOTBhMTEyNGMwNjJiOTgzN2U5ODE5MjI5NzZkOCJ9fQ=="], ["updated_at", "2019-04-06 20:42:49.649913"], ["id", 11]]
+  ↳ app/controllers/purchases_controller.rb:16
+  [1m[35m (8.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/purchases_controller.rb:16
+Redirected to https://w.tpaga.co/eyJtIjp7Im8iOiJQUiJ9LCJkIjp7InMiOiJtZWRpY2FwcCIsInBydCI6InByLTljZmRhNjVkMGNjMjY4MGFhMTY4YjM5NzJlZjMwZjg3NDk5NWJmYmIyYmMxOTBhMTEyNGMwNjJiOTgzN2U5ODE5MjI5NzZkOCJ9fQ==
+Completed 302 Found in 1045ms (ActiveRecord: 39.2ms)
+
+
